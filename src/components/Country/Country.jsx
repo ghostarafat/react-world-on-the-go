@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./Country.css";
 
-const Country = ({ country, handleVisitedCountries }) => {
+const Country = ({ country, handleVisitedCountries, handleVisitedFlags }) => {
   const [visited, setVisited] = useState(false);
   // console.log(country);
-  console.log(handleVisitedCountries);
+  // console.log(handleVisitedCountries);
 
   const handleVisited = () => {
     // basic system
@@ -37,9 +37,18 @@ const Country = ({ country, handleVisitedCountries }) => {
       </p>
       {/* <p>Currency: {country.currencies.currencies}</p> */}
       <p>Continent: {country.continents.continents}</p>
-      <button onClick={handleVisited}>
-        {visited ? "visited" : "Not Visited "}
-      </button>
+      <div className="gap-btn">
+        <button onClick={handleVisited}>
+          {visited ? "visited" : "Not Visited "}
+        </button>
+        <button
+          onClick={() => {
+            handleVisitedFlags(country?.flags?.flags?.png);
+          }}
+        >
+          Add Visited Flag:{" "}
+        </button>
+      </div>
     </div>
   );
 };

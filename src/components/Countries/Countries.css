@@ -3,3 +3,21 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+
+.visied-flags-container img {
+  width: 100px;
+}
+
+.visied-flags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* mobile view */
+@media (max-width: 768px) {
+  .countries-mobile {
+    grid-template-columns: 1fr; /* 1 card per row */
+  }
+}
